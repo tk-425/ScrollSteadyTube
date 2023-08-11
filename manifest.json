@@ -2,17 +2,19 @@
   "name": "ScrollSteadyTube",
   "version": "1.0.0",
   "manifest_version": 3,
-  "description": "Enhance your YouTube viewing experience like never before with ScrollSteadyTube, the ultimate Chrome extension designed for avid video watchers. Say goodbye to awkward transitions and limited screen space – enjoy theater mode videos that stick to the page while you seamlessly explore comments and recommended content.",
+  "description": "Enjoy theater mode videos that stick as you explore comments and recommendations. No more awkward transitions or cramped screens.",
   "permissions": ["scripting"],
   "host_permissions": ["https://www.youtube.com/*"],
   "action": {
     "default_title": "ScrollSteadyTube",
     "default_popup": "popup.html",
     "default_icon": {
-      "64": "images/icon-64.png"
+      "64": "images/icon-64.png",
+      "128": "images/icon-128.png"
     }
   },
   "icons": {
-    "64": "images/icon-64.png"
+    "64": "images/icon-64.png",
+    "128": "images/icon-128.png"
   }
 }
