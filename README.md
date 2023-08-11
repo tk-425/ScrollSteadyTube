@@ -11,5 +11,4 @@ Enhance your YouTube viewing experience like never before with ScrollSteadyTube,
 
 [Check out the YouTube Demo](https://www.youtube.com/watch?v=0DHahfeyax0)
 
-[![ScrollSteadyTube Youtube Demo](https://img.youtube.com/vi/0DHahfeyax0/0.jpg)](https://www.youtube.com/watch?v=0DHahfeyax0)
-
+[![ScrollSteadyTube Youtube Demo](https://img.youtube.com/vi/j05tnZj9SGc/0.jpg)](hhttps://www.youtube.com/watch?v=j05tnZj9SGc)
