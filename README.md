@@ -10,6 +10,6 @@ Enhance your YouTube viewing experience like never before with ScrollSteadyTube,
 
 Transform your YouTube videos into an immersive and user-friendly experience. ScrollSteadyTube ensures that the video remains fixed at the top of the page as you scroll through comments and recommended videos, allowing you to read comments without losing sight of the content.
 
-[Check out the YouTube Demo](hhttps://www.youtube.com/watch?v=j05tnZj9SGc)
+[Check out the YouTube Demo](hhttps://www.youtube.com/watch?v=2XtRkFggxrs)
 
-[![ScrollSteadyTube Youtube Demo](https://img.youtube.com/vi/j05tnZj9SGc/0.jpg)](https://www.youtube.com/watch?v=j05tnZj9SGc)
+[![ScrollSteadyTube Youtube Demo](https://img.youtube.com/vi/2XtRkFggxrs/0.jpg)](https://www.youtube.com/watch?v=2XtRkFggxrs)
