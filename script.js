@@ -23,6 +23,11 @@
       playerElement.style.backgroundColor = 'black';
     }
 
+    function changeCinematicStyle(playerElement) {
+      playerElement.style.position = 'fixed';
+      playerElement.style.zIndex = '100';
+    }
+
     // wait until passed selector is finished loading
     function waitForElement(selector) {
       return new Promise((res) => {
@@ -55,26 +60,35 @@
     waitForElement('#page-manager')
       .then((container) => {
         const playerContainer = document.querySelector('#page-manager');
-        const theaterButton =
-          document.getElementsByClassName('ytp-size-button')?.[0];
         const childClasses = 'style-scope ytd-page-manager hide-skeleton';
         const box = playerContainer.getElementsByClassName(childClasses);
 
-        // Enabling Theater mode
-        if (theaterButton.getAttribute('title') === 'Theater mode (t)') {
-          theaterButton.click?.();
-        }
-
         setTimeout(() => {
-          // childNodes[13] is the video div element
-          const targetElement = box[0].childNodes[13];
+          // wide-player element when is in theater mode
+          const playerWideContainer = box[0].childNodes[13];
+          // default-player element
+          const player =
+            box[0].childNodes[17].childNodes[1].childNodes[1].childNodes[1];
+          // background element of default-player
+          const cinematicContainer = player.childNodes[1];
 
-          if (targetElement) {
-            console.log('changing player style');
-            changePlayerStyle(targetElement);
+          if (playerWideContainer) {
+            console.log('changing player wide style');
+            changePlayerStyle(playerWideContainer);
           } else {
             setTimeout(() => {
-              changePlayerStyle(targetElement);
+              changePlayerStyle(playerWideContainer);
+            }, 2000);
+          }
+
+          if (player) {
+            console.log('changing player style');
+            changePlayerStyle(player);
+            changeCinematicStyle(cinematicContainer);
+          } else {
+            setTimeout(() => {
+              changePlayerStyle(player);
+              changeCinematicStyle(cinematicContainer);
             }, 2000);
           }
         }, 1000);
