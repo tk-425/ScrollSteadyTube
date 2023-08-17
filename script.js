@@ -1,7 +1,7 @@
 ﻿window.addEventListener('load', () => {
-  const elmColors = document.getElementsByName('change');
+  const changeStyle = document.getElementsByName('change');
 
-  for (const element of elmColors) {
+  for (const element of changeStyle) {
     element.onclick = () => {
       chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         chrome.scripting.executeScript({
@@ -17,6 +17,7 @@
     console.log('Window loaded');
 
     function changePlayerStyle(playerElement) {
+      console.log(playerElement);
       playerElement.style.top = '56px';
       playerElement.style.position = 'sticky';
       playerElement.style.zIndex = '1000';
@@ -24,6 +25,7 @@
     }
 
     function changeCinematicStyle(playerElement) {
+      console.log(playerElement);
       playerElement.style.position = 'fixed';
       playerElement.style.zIndex = '100';
     }
@@ -59,6 +61,8 @@
 
     waitForElement('#page-manager')
       .then((container) => {
+        console.log(container);
+
         const playerContainer = document.querySelector('#page-manager');
         const childClasses = 'style-scope ytd-page-manager hide-skeleton';
         const box = playerContainer.getElementsByClassName(childClasses);
