@@ -1,6 +1,7 @@
-# ScrollSteadyTube Extension
+# ScrollSteadyTube Browser Extension
 
 [Chrome Web Store - ScrollSteadyTube](https://chrome.google.com/webstore/detail/scrollsteadytube/nlllhdjgldnllhokihbfeojlpholfljn/related?hl=en&authuser=0)
+[Firefox Browser Add-Ons - ScrollSteadyTune](https://addons.mozilla.org/en-US/firefox/addon/scrollsteadytube/)
 
 ## About
 
