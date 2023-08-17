@@ -1,10 +1,12 @@
-# ScrollSteadyTube Chrome Browser Extension
+# ScrollSteadyTube Browser Extension
 
-[ScrollSteadyTube Chrome Web Store](https://chrome.google.com/webstore/detail/scrollsteadytube/nlllhdjgldnllhokihbfeojlpholfljn/related?hl=en&authuser=0)
+[Chrome Web Store - ScrollSteadyTube](https://chrome.google.com/webstore/detail/scrollsteadytube/nlllhdjgldnllhokihbfeojlpholfljn/related?hl=en&authuser=0)
+[Firefox Browser Add-Ons - ScrollSteadyTune](https://addons.mozilla.org/en-US/firefox/addon/scrollsteadytube/)
 
 ## About
 
-Enhance your YouTube viewing experience like never before with ScrollSteadyTube, the ultimate Chrome extension designed for avid video watchers. Say goodbye to awkward transitions and limited screen space – enjoy YouTube videos that stick to the page while you seamlessly explore comments and recommended content.
+Enhance your YouTube viewing experience like never before with ScrollSteadyTube, the ultimate Chrome extension designed for avid video watchers. 
+Say goodbye to awkward transitions and limited screen space – enjoy YouTube videos that stick to the page while you seamlessly explore comments and recommended content.
 
 **Key Features:**
 
