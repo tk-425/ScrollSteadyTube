@@ -1,0 +1,16 @@
+{
+  "name": "ScrollSteadyTube",
+  "version": "2.0.0",
+  "manifest_version": 3,
+  "description": "Enjoy YouTube videos that stick as you explore comments and recommendations. No more awkward transitions or cramped screens.",
+  "icons": {
+    "64": "images/icon-64.png",
+    "128": "images/icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/watch*"],
+      "js": ["script.js"]
+    }
+  ]
+}
