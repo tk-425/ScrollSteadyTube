@@ -1,37 +1,38 @@
-console.log('Content script loaded!');
-
 function injectStyle(container) {
-  console.log('Injecting style');
-
   const playerContainer = document.querySelector(container);
   const childClasses = 'style-scope ytd-page-manager hide-skeleton';
   const box = playerContainer.getElementsByClassName(childClasses);
 
   function changePlayerStyle(playerElement) {
-    console.log(playerElement);
-    playerElement.style.top = '56px';
-    playerElement.style.position = 'sticky';
-    playerElement.style.zIndex = '1000';
-    playerElement.style.backgroundColor = 'black';
+    try {
+      playerElement.style.top = '56px';
+      playerElement.style.position = 'sticky';
+      playerElement.style.zIndex = '1000';
+      playerElement.style.backgroundColor = 'black';
+    } catch (error) {}
   }
 
   function changeCinematicStyle(playerElement) {
-    console.log(playerElement);
-    playerElement.style.position = 'fixed';
-    playerElement.style.zIndex = '100';
+    try {
+      playerElement.style.position = 'fixed';
+      playerElement.style.zIndex = '100';
+    } catch (error) {}
   }
 
   setTimeout(() => {
-    // wide-player element when is in theater mode
-    const playerWideContainer = box[0].childNodes[13];
-    // default-player element
-    const player =
-      box[0].childNodes[17].childNodes[1].childNodes[1].childNodes[1];
-    // background element of default-player
-    const cinematicContainer = player.childNodes[1];
+
+    let playerWideContainer, player, cinematicContainer;
+
+    try {
+      // wide-player element when is in theater mode  
+      playerWideContainer = box[0].childNodes[13];
+      // default-player element
+      player = box[0].childNodes[17].childNodes[1].childNodes[1].childNodes[1];
+      // background element of default-player
+      cinematicContainer = player.childNodes[1];
+    } catch (error) {}
 
     if (playerWideContainer) {
-      console.log('changing player wide style');
       changePlayerStyle(playerWideContainer);
     } else {
       setTimeout(() => {
@@ -40,7 +41,6 @@ function injectStyle(container) {
     }
 
     if (player) {
-      console.log('changing player style');
       changePlayerStyle(player);
       changeCinematicStyle(cinematicContainer);
     } else {
@@ -54,16 +54,20 @@ function injectStyle(container) {
 
 let observer = new MutationObserver((mutation) => {
   if (document.querySelector('#page-manager')) {
-    console.log('#page-manager found');
-
     injectStyle('#page-manager');
-
     observer.disconnect();
+    startObserving();
   }
 });
 
-// Start observing
-observer.observe(document.body, {
-  childList: true,
-  subtree: true,
-});
+
+function startObserving() {
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
+}
+
+startObserving();
+
+
