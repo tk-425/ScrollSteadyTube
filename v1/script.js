@@ -69,10 +69,10 @@
 
         setTimeout(() => {
           // wide-player element when is in theater mode
-          const playerWideContainer = box[0].childNodes[13];
+          const playerWideContainer = box[0].childNodes[15];
           // default-player element
           const player =
-            box[0].childNodes[17].childNodes[1].childNodes[1].childNodes[1];
+            box[0].childNodes[19].childNodes[1].childNodes[1].childNodes[1];
           // background element of default-player
           const cinematicContainer = player.childNodes[1];
 
