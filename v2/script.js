@@ -3,10 +3,6 @@ function injectStyle(container) {
   const childClasses = 'style-scope ytd-page-manager hide-skeleton';
   const box = playerContainer.getElementsByClassName(childClasses);
 
-  console.log('injectStyle()');
-
-  console.log(box);
-
   function changePlayerStyle(playerElement) {
     try {
       playerElement.style.top = '56px';
