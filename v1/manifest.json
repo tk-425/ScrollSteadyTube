@@ -1,6 +1,6 @@
 ﻿{
   "name": "ScrollSteadyTube",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "manifest_version": 3,
   "description": "Enjoy YouTube videos that stick as you explore comments and recommendations. No more awkward transitions or cramped screens.",
   "permissions": ["scripting"],

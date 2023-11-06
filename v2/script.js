@@ -3,6 +3,10 @@ function injectStyle(container) {
   const childClasses = 'style-scope ytd-page-manager hide-skeleton';
   const box = playerContainer.getElementsByClassName(childClasses);
 
+  console.log('injectStyle()');
+
+  console.log(box);
+
   function changePlayerStyle(playerElement) {
     try {
       playerElement.style.top = '56px';
@@ -20,14 +24,15 @@ function injectStyle(container) {
   }
 
   setTimeout(() => {
-
     let playerWideContainer, player, cinematicContainer;
 
     try {
-      // wide-player element when is in theater mode  
-      playerWideContainer = box[0].childNodes[13];
+      // wide-player element when is in theater mode
+      playerWideContainer = box[0].childNodes[15];
+
       // default-player element
-      player = box[0].childNodes[17].childNodes[1].childNodes[1].childNodes[1];
+      player = box[0].childNodes[19].childNodes[1].childNodes[1].childNodes[1];
+
       // background element of default-player
       cinematicContainer = player.childNodes[1];
     } catch (error) {}
@@ -60,7 +65,6 @@ let observer = new MutationObserver((mutation) => {
   }
 });
 
-
 function startObserving() {
   observer.observe(document.body, {
     childList: true,
@@ -69,5 +73,3 @@ function startObserving() {
 }
 
 startObserving();
-
-
