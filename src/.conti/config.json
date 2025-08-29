@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "project_name": "v3",
+  "project_path": "/Users/terrykang/Documents/Programming/+Projects/Extension/Chrome-Extension/ScrollSteadyTube/v3",
+  "save_limit": 10,
+  "instruction_inject_frequency": 10,
+  "auto_parse_code": true,
+  "excluded_paths": [
+    ".git",
+    "node_modules",
+    "__pycache__",
+    ".venv",
+    "venv"
+  ],
+  "created_at": "/Users/terrykang"
+}
