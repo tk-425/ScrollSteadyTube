@@ -11,7 +11,7 @@ function injectStyles() {
   style.id = STYLE_ID;
   style.textContent = `
     /* While sticky, ensure above content */
-    .${STICKY_CLASS} { z-index: 2147483646 !important; }
+    .${STICKY_CLASS} { z-index: 2147483647 !important; }
 
   `;
   document.head.appendChild(style);
@@ -70,7 +70,20 @@ function stickNow() {
     width: rect.width + 'px',
     height: rect.height + 'px',
   });
+  currentContainer.style.setProperty('z-index', '2147483647', 'important');
   currentContainer.classList.add(STICKY_CLASS);
+  
+  // Set z-index on player containers to ensure they stay above comments
+  // Normal mode: #player-container, Theater mode: #player-full-bleed-container
+  const playerContainer = document.querySelector('#player-container');
+  if (playerContainer) {
+    playerContainer.style.setProperty('z-index', '999', 'important');
+  }
+  const fullBleedContainer = document.querySelector('#player-full-bleed-container');
+  if (fullBleedContainer) {
+    fullBleedContainer.style.setProperty('z-index', '999', 'important');
+  }
+  
   stuck = true;
 
   // Watch width changes (e.g., theater toggle) and keep sizing synced
@@ -90,6 +103,18 @@ function unstickNow() {
   currentContainer.style.left = '';
   currentContainer.style.width = '';
   currentContainer.style.height = '';
+  currentContainer.style.zIndex = '';
+  
+  // Remove z-index from player containers
+  const playerContainer = document.querySelector('#player-container');
+  if (playerContainer) {
+    playerContainer.style.zIndex = '';
+  }
+  const fullBleedContainer = document.querySelector('#player-full-bleed-container');
+  if (fullBleedContainer) {
+    fullBleedContainer.style.zIndex = '';
+  }
+  
   if (placeholder && placeholder.parentNode) placeholder.parentNode.removeChild(placeholder);
   placeholder = null;
   stuck = false;
@@ -113,6 +138,18 @@ function updateSticky() {
       currentContainer.style.left = rect.left + 'px';
       currentContainer.style.width = rect.width + 'px';
       currentContainer.style.height = Math.round(rect.width / ar) + 'px';
+      currentContainer.style.setProperty('z-index', '2147483647', 'important');
+      
+      // Ensure player containers have z-index to stay above comments
+      const playerContainer = document.querySelector('#player-container');
+      if (playerContainer) {
+        playerContainer.style.setProperty('z-index', '999', 'important');
+      }
+      const fullBleedContainer = document.querySelector('#player-full-bleed-container');
+      if (fullBleedContainer) {
+        fullBleedContainer.style.setProperty('z-index', '999', 'important');
+      }
+      
       // Keep reserved space height matching new aspect
       if (placeholder) placeholder.style.height = Math.round(rect.width / ar) + 'px';
       // Keep the cover aligned
@@ -143,7 +180,7 @@ function ensureGapCover() {
     height: '6px',
     top: mastheadHeight() + 'px',
     background: getPageBgColor(),
-    zIndex: '2147483645', // just under the player
+    zIndex: '2147483646', // just under the player
     pointerEvents: 'none',
   });
   document.body.appendChild(gapCover);
